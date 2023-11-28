@@ -1,8 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './components/App';
+// import { Provider } from 'react-redux';
+// import store from './Redux/Store/Store';
 
-function App() {
-  return <h1>Hello World!</h1>;
-}
+document.addEventListener('DOMContentLoaded', () => {
+  ReactDOM.render(<App />, document.getElementById('root'));
+});
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <Provider store={store}>
+//       <App />
+//     </Provider>
+//   </React.StrictMode>,
+//   document.getElementById('root'),
+// );
