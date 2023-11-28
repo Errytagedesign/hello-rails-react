@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Home';
+// import Home from './Home';
 import Greetings from './Greetings';
 import { useDispatch } from 'react-redux';
 import { setGreeting } from '../Redux/Features/greetingsSlice';
@@ -12,17 +12,20 @@ function App() {
     fetch('/api/random_greeting')
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         dispatch(setGreeting(data.greeting));
       })
       .catch((error) => console.error('Error fetching greeting:', error));
   }, [dispatch]);
+
   return (
-    <Router>
-      <Routes>
-        <Route path='/' exact component={Home} />
-        <Route path='/greetings' component={Greetings} />
-      </Routes>
-    </Router>
+    <main>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Greetings />} />
+        </Routes>
+      </Router>
+    </main>
   );
 }
 

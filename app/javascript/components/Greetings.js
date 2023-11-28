@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 function Greetings() {
   const greeting = useSelector((state) => state.greeting);
